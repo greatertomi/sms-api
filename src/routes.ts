@@ -1,4 +1,6 @@
 import {UserController} from "./controller/UserController";
+import {AccountController} from "./controller/AccountController";
+import {PhoneNumberController} from "./controller/PhoneNumberController";
 
 export const Routes = [{
     method: "get",
@@ -20,4 +22,14 @@ export const Routes = [{
     route: "/users/:id",
     controller: UserController,
     action: "remove"
+}, {
+    method: "get",
+    route: "/accounts",
+    controller: AccountController,
+    action: "all"
+}, {
+    method: "get",
+    route: "/phoneNumbers",
+    controller: PhoneNumberController,
+    action: "all"
 }];

@@ -2,9 +2,9 @@
    "type": "postgres",
    "host": "localhost",
    "port": 5432,
-   "username": "test",
-   "password": "test",
-   "database": "test",
+   "username": "root",
+   "password": "programmer",
+   "database": "moneymarka",
    "synchronize": true,
    "logging": false,
    "entities": [

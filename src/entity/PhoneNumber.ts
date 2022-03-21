@@ -1,9 +1,8 @@
-import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
-import {Account} from "./Account";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Account } from "./Account";
 
 @Entity()
 export class PhoneNumber {
-
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -11,5 +10,5 @@ export class PhoneNumber {
   number: string;
 
   @ManyToOne(() => Account, (account) => account.id)
-  account_id: string;
+  account: number;
 }
