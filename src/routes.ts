@@ -1,35 +1,48 @@
-import {UserController} from "./controller/UserController";
-import {AccountController} from "./controller/AccountController";
-import {PhoneNumberController} from "./controller/PhoneNumberController";
+import { UserController } from "./controller/UserController";
+import { AccountController } from "./controller/AccountController";
+import { PhoneNumberController } from "./controller/PhoneNumberController";
 
-export const Routes = [{
+export const Routes = [
+  {
     method: "get",
     route: "/users",
     controller: UserController,
-    action: "all"
-}, {
+    action: "all",
+  },
+  {
     method: "get",
     route: "/users/:id",
     controller: UserController,
-    action: "one"
-}, {
+    action: "one",
+  },
+  {
     method: "post",
     route: "/users",
     controller: UserController,
-    action: "save"
-}, {
+    action: "save",
+  },
+  {
     method: "delete",
     route: "/users/:id",
     controller: UserController,
-    action: "remove"
-}, {
+    action: "remove",
+  },
+  {
     method: "get",
     route: "/accounts",
     controller: AccountController,
-    action: "all"
-}, {
+    action: "all",
+  },
+  {
     method: "get",
     route: "/phoneNumbers",
     controller: PhoneNumberController,
-    action: "all"
-}];
+    action: "all",
+  },
+  {
+    method: "post",
+    route: "/accounts/login",
+    controller: AccountController,
+    action: "login",
+  },
+];

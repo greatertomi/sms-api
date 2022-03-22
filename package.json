@@ -4,6 +4,7 @@
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
    "devDependencies": {
+      "@types/jsonwebtoken": "^8.5.8",
       "@types/node": "^16.11.10",
       "nodemon": "^2.0.15",
       "prettier": "^2.6.0",
@@ -13,6 +14,7 @@
    "dependencies": {
       "body-parser": "^1.19.1",
       "express": "^4.17.2",
+      "jsonwebtoken": "^8.5.1",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.13",
       "typeorm": "0.2.45"
