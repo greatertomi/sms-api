@@ -15,7 +15,6 @@ createConnection()
 
     app.use("/", routes);
 
-    // todo: Move this to an environment variable
     const PORT = process.env.PORT;
     app.listen(PORT, () => {
       console.log(`Server started on port ${PORT}`);
