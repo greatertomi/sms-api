@@ -14,6 +14,7 @@ createConnection()
 
     app.use("/", routes);
 
+    // todo: Move this to an environment variable
     const PORT = 3000;
     app.listen(PORT, () => {
       console.log(`Server started on port ${PORT}`);

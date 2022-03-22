@@ -5,7 +5,8 @@ import { PhoneNumber } from "../entity/PhoneNumber";
 class PhoneNumberController {
   static allPhoneNumbers = async (req: Request, res: Response) => {
     const phoneNumberRepository = getRepository(PhoneNumber);
-    return phoneNumberRepository.find();
+    const phoneNumbers = await phoneNumberRepository.find();
+    res.send(phoneNumbers);
   };
 }
 

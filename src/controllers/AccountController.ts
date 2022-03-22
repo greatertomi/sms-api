@@ -18,8 +18,8 @@ class AccountController {
       }
 
       const payload = { id: account.id, username: account.username };
-      const token = jwt.sign(payload, config.jwtSecret, { expiresIn: "1h" });
-      return { message: "Login successful", token };
+      const token = jwt.sign(payload, config.jwtSecret, { expiresIn: "10h" });
+      return res.send({ message: "Login successful", token });
     } catch (err) {
       return res.status(500).send({ message: "Server Error" });
     }
