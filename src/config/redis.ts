@@ -1,7 +1,7 @@
 import { createClient } from "redis";
+require("dotenv").config();
 
-// todo: Move this to an environment variable
-const REDIS_PORT = 6379;
+const REDIS_PORT = process.env.REDIS_PORT;
 
 const client = createClient(REDIS_PORT);
 

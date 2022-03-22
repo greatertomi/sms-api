@@ -1,6 +1,6 @@
 import { body } from "express-validator";
 
-export const validateInboundSms = [
+export const validateSms = [
   body("from")
     .notEmpty()
     .withMessage("from is missing")

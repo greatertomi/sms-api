@@ -8,6 +8,7 @@ class InboundController {
     const { to, from, text } = req.body;
     const timestamp = +new Date();
     const searchText = ["STOP", "STOP\\n", "STOP\\r", "STOP\\r\\n"];
+    const HOURS_4 = 14400;
     try {
       const phoneNumberRepository = getRepository(PhoneNumber);
       const toNumber = await phoneNumberRepository.findOne({ number: to });
@@ -18,10 +19,9 @@ class InboundController {
       }
 
       if (searchText.includes(text)) {
-        console.log("data cached", { from, to });
         redis.setex(
-          `number${to}-${timestamp}`,
-          1440,
+          `number${to}${from}-${timestamp}`,
+          HOURS_4,
           JSON.stringify({ from, to })
         );
       }

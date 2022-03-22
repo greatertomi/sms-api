@@ -4,9 +4,10 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import routes from "./routes";
+require("dotenv").config();
 
 createConnection()
-  .then(async (connection) => {
+  .then(async () => {
     const app = express();
 
     app.use(cors());
@@ -15,7 +16,7 @@ createConnection()
     app.use("/", routes);
 
     // todo: Move this to an environment variable
-    const PORT = 3000;
+    const PORT = process.env.PORT;
     app.listen(PORT, () => {
       console.log(`Server started on port ${PORT}`);
     });
