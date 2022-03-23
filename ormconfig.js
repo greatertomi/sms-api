@@ -17,7 +17,8 @@ module.exports = {
     migrationsDir: "src/migration",
     subscribersDir: "src/subscriber",
   },
-  ssl: {
-    ca: process.env.SSL_CERT,
-  },
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? { rejectUnauthorized: false }
+      : false,
 };
