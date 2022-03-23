@@ -9,3 +9,4 @@ This is a simple sms api deployed [here](https://mymoneymarka-api.herokuapp.com/
 3. Change the `.env.example` file to `.env`
 4. Fill up the credentials in `.env`
 5. Run `npm start` command
+6. Run scripts in /src/utils/queries to prepopulate database with necessary data
