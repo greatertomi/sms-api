@@ -1,6 +1,6 @@
 # SMS-API
 
-This is a simple sms api deployed [here](https://mymoneymarka-api.herokuapp.com/)
+This is a simple sms api deployed [here](https://mymoneykarma-api.herokuapp.com/)
 
 ## Steps to run this project:
 
@@ -10,3 +10,20 @@ This is a simple sms api deployed [here](https://mymoneymarka-api.herokuapp.com/
 4. Fill up the credentials in `.env`
 5. Run `npm start` command
 6. Run scripts in /src/utils/queries to prepopulate database with necessary data
+
+## Available routes
+
+1. https://mymoneykarma-api.herokuapp.com/login [POST]
+2. https://mymoneykarma-api.herokuapp.com/outbound/sms [POST]
+3. https://mymoneykarma-api.herokuapp.com/inbound/sms [POST]
+
+## Technologies used
+
+- Typescript
+- Node.js
+- Express
+- REST Communication Protocol
+- Redis
+- TypeORM
+- PostgreSQL
+- 
