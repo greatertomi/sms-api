@@ -1,0 +1,5 @@
+{
+  "spec": ["./src/test/*.test.ts"],
+  "timeout": 5000,
+  "loader": "ts-node/esm"
+}

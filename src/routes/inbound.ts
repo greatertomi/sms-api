@@ -8,7 +8,7 @@ const router = Router();
 
 router.post(
   "/sms",
-  [checkJwt, validateSms, validationChecker],
+  [checkJwt, ...validateSms, validationChecker],
   InboundController.sendSms
 );
 

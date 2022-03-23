@@ -7,8 +7,9 @@ import routes from "./routes";
 import { acceptOnlyPostRequest, getWrongRouteErr } from "./utils/helpers";
 require("dotenv").config();
 
-createConnection()
-  .then(async () => {
+const main = async () => {
+  try {
+    await createConnection();
     const app = express();
 
     app.use(cors());
@@ -23,5 +24,9 @@ createConnection()
     app.listen(PORT, () => {
       console.log(`Server started on port ${PORT}`);
     });
-  })
-  .catch((error) => console.log(error));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+main();

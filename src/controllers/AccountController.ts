@@ -7,9 +7,11 @@ import config from "../config/config";
 class AccountController {
   static login = async (req: Request, res: Response) => {
     const { username, authId } = req.body;
+    console.log("inside login", req.body);
     const accountRepository = getRepository(Account);
     try {
       const account = await accountRepository.findOne({ username });
+      console.log("fetched", account);
       if (!account) {
         return res.status(403).send({ message: "User does not exist" });
       }
