@@ -28,4 +28,5 @@ This is a simple sms api deployed [here](https://mymoneykarma-api.herokuapp.com/
 - PostgreSQL
 
 ## Note
-1. Authorization follows the Bearer [token] pattern. To access private routes, copy the token received during login into the authorization header. 
+1. Authorization follows the Bearer [token] pattern. To access private routes, copy the token received during login into the authorization header.
+2. Accept only POST request

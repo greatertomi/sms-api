@@ -24,14 +24,6 @@ class AccountController {
       return res.status(500).send({ message: "Server Error" });
     }
   };
-
-  static allAccounts = async (req: Request, res: Response) => {
-    const accountRepository = getRepository(Account);
-    const accounts = await accountRepository.find({
-      select: ["id", "username", "auth_id"],
-    });
-    res.send(accounts);
-  };
 }
 
 export default AccountController;
