@@ -14,8 +14,8 @@ This is a simple sms api deployed [here](https://mymoneykarma-api.herokuapp.com/
 ## Available routes
 
 1. https://mymoneykarma-api.herokuapp.com/login [POST]
-2. https://mymoneykarma-api.herokuapp.com/outbound/sms [POST]
-3. https://mymoneykarma-api.herokuapp.com/inbound/sms [POST]
+2. https://mymoneykarma-api.herokuapp.com/outbound/sms (protected) [POST]
+3. https://mymoneykarma-api.herokuapp.com/inbound/sms (protected) [POST]
 
 ## Technologies used
 
@@ -26,4 +26,6 @@ This is a simple sms api deployed [here](https://mymoneykarma-api.herokuapp.com/
 - Redis
 - TypeORM
 - PostgreSQL
-- 
+
+## Note
+1. Authorization follows the Bearer [token] pattern. To access private routes, copy the token received during login into the authorization header. 
