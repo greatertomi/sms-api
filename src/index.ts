@@ -5,6 +5,7 @@ import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import routes from "./routes";
 import { acceptOnlyPostRequest, getWrongRouteErr } from "./utils/helpers";
+import { NextFunction, Request, Response } from "express";
 require("dotenv").config();
 
 const main = async () => {
@@ -15,10 +16,12 @@ const main = async () => {
     app.use(cors());
     app.use(bodyParser.json());
 
-    app.use((req, res, next) => acceptOnlyPostRequest(req, res, next));
+    app.use((req: Request, res: Response, next: NextFunction) =>
+      acceptOnlyPostRequest(req, res, next)
+    );
     app.use("/", routes);
 
-    app.use((req, res) => getWrongRouteErr(req, res));
+    app.use((req: Request, res: Response) => getWrongRouteErr(req, res));
 
     const PORT = process.env.PORT;
     app.listen(PORT, () => {

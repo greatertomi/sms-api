@@ -30,3 +30,9 @@ This is a simple sms api deployed [here](https://mymoneykarma-api.herokuapp.com/
 ## Note
 1. Authorization follows the Bearer [token] pattern. To access private routes, copy the token received during login into the authorization header.
 2. The api accepts only POST request
+
+## Running Tests
+1. Create a test database and fill up the credential in your `.env`
+2. Run `npm run test` and it will create the tables. The test may fail.
+3. Run the script in `/db/testSeed.sql` to prepopulate your db
+4. Run `npm run test` again. This should pass.

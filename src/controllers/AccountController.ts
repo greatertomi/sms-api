@@ -7,11 +7,9 @@ import config from "../config/config";
 class AccountController {
   static login = async (req: Request, res: Response) => {
     const { username, authId } = req.body;
-    console.log("inside login", req.body);
-    const accountRepository = getRepository(Account);
     try {
+      const accountRepository = getRepository(Account);
       const account = await accountRepository.findOne({ username });
-      console.log("fetched", account);
       if (!account) {
         return res.status(403).send({ message: "User does not exist" });
       }
@@ -23,6 +21,20 @@ class AccountController {
       const token = jwt.sign(payload, config.jwtSecret, { expiresIn: "10h" });
       return res.send({ message: "Login successful", token });
     } catch (err) {
+      console.error(err);
+      return res.status(500).send({ message: "Server Error" });
+    }
+  };
+
+  static allAccounts = async (req: Request, res: Response) => {
+    try {
+      const accountRepository = getRepository(Account);
+      const accounts = await accountRepository.find({
+        select: ["id", "username", "auth_id"],
+      });
+      res.send(accounts);
+    } catch (err) {
+      console.error(err);
       return res.status(500).send({ message: "Server Error" });
     }
   };
